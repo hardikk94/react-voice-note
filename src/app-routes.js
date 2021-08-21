@@ -4,14 +4,14 @@ const renderRoutes = [{
     path: routes.recorder.path,
     exact: true,
     component: React.lazy(() =>
-      import('./container/voice-note-list/voice-note-list')
+      import('./container/voice-note-list/voice-recorder')
     ),
   },
   {
     path: routes.list.path,
     exact: true,
     component: React.lazy(() =>
-      import('./container/voice-recorder/voice-recorder')
+      import('./container/voice-recorder/voice-note-list')
     ),
   },
 ]
