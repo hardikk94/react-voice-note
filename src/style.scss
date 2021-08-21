@@ -12,13 +12,8 @@ body {
   padding: 0;
   height: 100vh;
   overflow: hidden;
-  font-family: 'Roboto';
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  box-shadow: none;
-  color: $white-color;
-  background-image: $white-color;
+  font-family: 'Roboto';      
+  box-shadow: none;    
   margin: 0 auto;
   height: 100%;
 }
