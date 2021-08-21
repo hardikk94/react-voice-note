@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="23px" viewBox="0 0 28 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54 (76480) - https://sketchapp.com -->
+    <title>ico_record</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M3,17.712644 C3,18.409962 2.3125,19 1.5,19 C0.6875,19 0,18.409962 0,17.712644 L0,6.28736 C0,5.59004 0.6875,5 1.5,5 C2.3125,5 3,5.5364 3,6.28736 L3,17.712644 Z M9,21.704225 C9,22.4061033 8.3125,23 7.5,23 C6.6875,23 6,22.4061033 6,21.704225 L6,1.29577 C6,0.5939 6.6875,0 7.5,0 C8.375,0 9,0.5939 9,1.29577 L9,21.704225 Z M16,17.725 C16,18.415625 15.3125,19 14.5,19 C13.6875,19 13,18.415625 13,17.725 L13,3.275 C13,2.58437 13.6875,2 14.5,2 C15.3125,2 16,2.58437 16,3.275 L16,17.725 Z M22,21.728111 C22,22.4170507 21.3125,23 20.5,23 C19.6875,23 19,22.4170507 19,21.728111 L19,1.27189 C19,0.58295 19.6875,0 20.5,0 C21.3125,0 22,0.58295 22,1.27189 L22,21.728111 Z M28,17.712644 C28,18.409962 27.3125,19 26.5,19 C25.6875,19 25,18.409962 25,17.712644 L25,6.28736 C25,5.59004 25.6875,5 26.5,5 C27.3125,5 28,5.5364 28,6.28736 L28,17.712644 Z" id="path-1"></path>
+    </defs>
+    <g id="Administration" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-83.000000, -171.000000)">
+            <g id="ico_record" transform="translate(83.000000, 171.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <polygon id="Fill-1" fill-opacity="0.5" fill="#FFFFFF" mask="url(#mask-2)" points="-5 -5 33 -5 33 28 -5 28"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

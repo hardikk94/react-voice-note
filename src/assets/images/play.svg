@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>icon/play</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/play" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M9.09681757,3.35734993 C7.77393734,2.42660555 6,3.42769368 6,5.04965701 L6,18.452932 C6,20.0885787 7.77163122,21.0787038 9.09741142,20.1448212 L18.6425769,13.4350033 C19.7873093,12.6563716 19.7873093,10.8735073 18.6430287,10.0678699 L9.09681757,3.35734993 Z M17.7894131,12.2013181 L8.23419233,18.918097 C7.92419513,19.1364593 7.5,18.8993862 7.5,18.452932 L7.5,5.04965701 C7.5,4.61332497 7.93015169,4.37057696 8.23393805,4.58431319 L17.7799516,11.2947279 C18.0718479,11.5002056 18.0718479,12.0091834 17.7894131,12.2013181 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+</svg>

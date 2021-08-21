@@ -4,8 +4,7 @@ const Header = () => {
     return (
         <header className="header">
             <div className="title">
-                <span className="part_first">Stop to Remember </span>
-                <span className="part_Second">your Ongoing Thoughts</span>
+                <span className="part_first">Stop to Remember <span className="part_Second">your Ongoing Thoughts</span></span>                
             </div>
             <nav className="navbar">
                 <ul className="btn_row">

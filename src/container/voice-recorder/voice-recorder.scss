@@ -12,9 +12,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    .title{       
+    .voice_form_title{       
         display: flex;
-        flex-direction: column;
+        flex-direction: column;                
+        align-items: center;
+        line-height: 100px;
+        padding-left: 20px;
         .first_part{
             font-size: 46px;
             font-weight: bolder;
@@ -72,6 +75,14 @@
     .btn_submit{        
         margin-right: 50px;
     }      
+
+    .img_recording{
+        height: 30px;
+        width: 30px;
+        padding: 0;
+        margin: auto;
+        display: flex;
+    }
 }
 
 

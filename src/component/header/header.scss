@@ -21,15 +21,15 @@
 }
 .title {
     width: 60%;
-    height: 100%;  
-    align-items: center;
-    line-height: 100px;
+    height: 100%;      
+    align-items: center;    
     padding-left: 20px;
+    display: flex;
     .part_first {             
         margin-right: auto;
         margin-left: auto;        
         text-align: left;   
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         color: $white-color
     }
 
@@ -37,7 +37,7 @@
         margin-right: auto;
         margin-left: auto;        
         text-align: left;   
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         color: $warning-color;
     }
 }

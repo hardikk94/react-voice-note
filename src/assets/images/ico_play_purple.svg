@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="12px" viewBox="0 0 10 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <title>ico_play_purple</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0.641568,11.9999997 C0.538749,11.9999997 0.437738,11.977474 0.346336,11.933581 C0.133486,11.830603 0,11.624088 0,11.39956 L0,0.59525 C0,0.37072 0.133484,0.1642 0.346336,0.06122 C0.553183,-0.03331 0.797296,-0.01756 0.987904,0.10287 L9.32583,5.50502 C9.49719,5.61757 9.6,5.80102 9.6,5.99741 C9.6,6.19381 9.49718,6.37725 9.32583,6.4898 L0.987904,11.891957 C0.886287,11.958359 0.766033,11.996061 0.641568,11.9999997 Z M1.283136,1.7415 L1.283136,10.253285 L7.85028,5.99739 L1.283136,1.7415 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="7.9”-iPad-mini" transform="translate(-132.000000, -222.000000)">
+            <g id="ico_play_purple" transform="translate(132.000000, 222.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <polygon id="Fill-1" fill="#4C1099" mask="url(#mask-2)" points="-5 -5 14.6 -5 14.6 17 -5 17"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
