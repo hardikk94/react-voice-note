@@ -10,10 +10,10 @@ const Header = () => {
             <nav className="navbar">
                 <ul className="btn_row">
                     <li>
-                        <button type="button" to="/voice-recorder" className="btn_nav_links">Voice Record</button>
+                        <Link type="button" to="/voice-recorder" className="btn_nav_links">Voice Record</Link>
                     </li>
                     <li>
-                        <button type="button" to="/voice-list" className="btn_nav_links">Voice List</button>
+                        <Link type="button" to="/voice-list" className="btn_nav_links">Voice List</Link>
                     </li>
                 </ul>
             </nav>

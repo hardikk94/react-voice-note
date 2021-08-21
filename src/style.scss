@@ -18,7 +18,7 @@ body {
   justify-content: center;
   box-shadow: none;
   color: $white-color;
-  background-image: linear-gradient($dark-black-2c, $dark-black-2c);
+  background-image: $white-color;
   margin: 0 auto;
   height: 100%;
 }
@@ -134,7 +134,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  width: 100%;
+ 
 }
 
 img {
