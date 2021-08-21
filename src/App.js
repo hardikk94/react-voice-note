@@ -1,19 +1,31 @@
-import { Route } from 'react-router-dom';
-import VoiceRecorder from './container/voice-recorder/voice-recorder';
-import VoiceNotesList from './container/voice-note-list/voice-note-list';
+import { Route, Switch } from 'react-router-dom';
 import Header from './component/header/header';
+import React, { Suspense } from 'react'
+import appRoutes from './app-routes';
 import './App.css';
 function App() {
   return (
     <div className="voice_main_wrapper">
-      <Header />
-      <Route path="/voice-recorder">
-        <VoiceRecorder />
-      </Route>
-      <Route path="/voice-list">
-        <VoiceNotesList />
-      </Route>
-      React Voice note
+      <Suspense fallback={<div />}>
+        <Header />
+          <Switch>
+            {appRoutes.map(r => (
+                <Route
+                  key={r.path}
+                  exact={r.exact}
+                  path={r.path}
+                  component={props => {
+                    return (
+                      <r.component  {...props} 
+                      />
+                    )
+                  }}
+                />
+              ))}     
+        </Switch>  
+      </Suspense>
+      
+         
     </div>
   );
 }
