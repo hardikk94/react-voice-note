@@ -1,5 +1,4 @@
 import './voice-recorder.scss';
-import { images } from '../../config/images'
 import microphoneIcon from '../../assets/images/ico_voice_record_active.svg'
 const VoiceRecorder = () => {
     return (
