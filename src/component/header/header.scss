@@ -14,7 +14,8 @@
 }
 
 .header a:hover,
-.header a:active{
+.header a:active,
+.header a.active{
     padding-bottom: 0.25rem;
     border-bottom: 4px solid $warning-color;
     opacity: 0.7;
