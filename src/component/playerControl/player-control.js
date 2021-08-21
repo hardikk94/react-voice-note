@@ -1,0 +1,28 @@
+import './player-control.scss'
+
+import React, { useRef } from 'react'
+import ReactAudioPlayer from 'react-audio-player'
+
+const PlayerView = props => {
+  const audioPlayer = useRef(null)  
+  const {notes} = props
+
+  const errorPlayer = () => {
+      alert("Playback error!!")
+  }
+  return (
+    <div className="row row__audiovideo__view">
+        <ReactAudioPlayer                 
+          listenInterval={100}
+          onError={errorPlayer}
+          ref={audioPlayer}
+          id="audioplayer"          
+          src={notes.url}
+          autoPlay
+          controls
+        />      
+    </div>
+  )
+}
+
+export default PlayerView
