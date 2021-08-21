@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import './header.scss'
 const Header = () => {
     return (
@@ -10,10 +10,10 @@ const Header = () => {
             <nav className="navbar">
                 <ul className="btn_row">
                     <li>
-                        <Link type="button" to="/voice-recorder" className="btn_nav_links">Voice Record</Link>
+                        <NavLink activeClassName="active"  to="/voice-recorder" className="btn_nav_links">Voice Record</NavLink>
                     </li>
                     <li>
-                        <Link type="button" to="/voice-list" className="btn_nav_links">Voice List</Link>
+                        <NavLink  activeClassName="active" to="/voice-list" className="btn_nav_links">Voice List</NavLink>
                     </li>
                 </ul>
             </nav>

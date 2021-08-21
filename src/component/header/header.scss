@@ -12,6 +12,13 @@
     bottom: auto;
     z-index: 999;
 }
+
+.header a:hover,
+.header a:active{
+    padding-bottom: 0.25rem;
+    border-bottom: 4px solid $warning-color;
+    opacity: 0.7;
+}
 .title {
     width: 60%;
     height: 100%;  
