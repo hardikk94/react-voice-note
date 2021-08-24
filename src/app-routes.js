@@ -13,6 +13,12 @@ const renderRoutes = [{
     component: React.lazy(() =>
       import('./container/voice-note-list/voice-note-list')
     ),
+  },{
+    path:"/",
+    exact: true,    
+    component: React.lazy(() =>
+      import('./container/voice-recorder/voice-recorder')
+    ),
   },
 ]
 
