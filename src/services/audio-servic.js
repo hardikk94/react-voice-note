@@ -1,10 +1,10 @@
 import { MicrophoneRecorderMp3 } from './mp3-mic';
 import audioURL from './../connected.wav';
-
+import toastService, { toastType } from '../services/toast.service';
 export class AudioDetail {
     AudioRecordingLimit = 30;
-    mp3MicRecorder = null
-    intervalCallback = null
+    mp3MicRecorder = null;
+    intervalCallback = null;
     constructor() {
         this.mp3MicRecorder = new MicrophoneRecorderMp3();
     }
@@ -12,6 +12,7 @@ export class AudioDetail {
     startRecording = async () => {
         console.log('<=== start recording ===> ')
         this.mp3MicRecorder.startRecording();
+        toastService.showToast("Recording Started", toastType.info)
         this.setPlayerInterval()
     }
 
@@ -37,9 +38,10 @@ export class AudioDetail {
     stopRecording = async () => {
         console.log('<=== stop recording ===> ')
         let data = await this.mp3MicRecorder.stopRecording()
-        this.clearAudioRecorderInterval()
+        this.clearAudioRecorderInterval()        
+        toastService.showToast("Recording Stopped", toastType.info)
         this.onStopHandler(data)
-        return true
+        return data
     }
 
     clearAudioRecorderInterval = () => {      
