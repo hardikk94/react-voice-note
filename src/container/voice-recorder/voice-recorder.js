@@ -27,7 +27,7 @@ const VoiceRecorder = () => {
             <div className="voice_form">
                 <div className="voice_form_title">
                     <div className="first_part">Speak up your ideas</div>
-                    <div className="second_part">Add your voice note and share to your friends</div>
+                    <div className="second_part">Add your voice note and share to your friends{audioService.getTimerCount()}</div>
                 </div>
                 <input type="text" placeholder="Your voice note name here..." name="voiceNote" id="voiceNote" className="txt_input" />
                 <div className="btn_row_recorder">

@@ -2,7 +2,7 @@ import { MicrophoneRecorderMp3 } from './mp3-mic';
 import audioURL from './../connected.wav';
 
 export class AudioDetail {
-    AudioRecordingLimit = 30
+    AudioRecordingLimit = 30;
     mp3MicRecorder = null
     intervalCallback = null
     constructor() {
@@ -25,8 +25,7 @@ export class AudioDetail {
             this.intervalCallback = setInterval(async () => {
                 console.log('<=== Timer is : ===> ', this.timerCount)
                 if (this.timerCount >= this.AudioRecordingLimit) {
-                    await this.stopRecording()
-                    this.startRecording()
+                    await this.stopRecording()                    
                 } else {
                     this.timerCount++
                 }
@@ -63,6 +62,10 @@ export class AudioDetail {
                     : this.timerCount
             )
         }
+    }
+
+    getTimerCount = () => {
+        return this.timerCount;
     }
 }
 

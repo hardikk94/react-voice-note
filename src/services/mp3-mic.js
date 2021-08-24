@@ -1,5 +1,5 @@
-import AudioContext from '../component/Custom-React-Mic/libs/AudioContext'
-import { Recorder } from '../component/Custom-React-Mic/libs/vmsg';
+import AudioContext from '../audio-lib/AudioContext'
+import { Recorder } from '../audio-lib/vmsg';
 
 let analyser
 let audioCtx
@@ -12,8 +12,9 @@ let mediaOptions = {
   mimeType: 'audio/mp3',
 }
 let timeInterval
-const shimURL = 'https://unpkg.com/wasm-polyfill.js@0.2.0/wasm-polyfill.js'
-const wasmURL = 'https://unpkg.com/vmsg@0.3.0/vmsg.wasm'
+// online url
+// const shimURL = 'https://unpkg.com/wasm-polyfill.js@0.2.0/wasm-polyfill.js'
+// const wasmURL = 'https://unpkg.com/vmsg@0.3.0/vmsg.wasm'
 navigator.getUserMedia =
   navigator.getUserMedia ||
   navigator.webkitGetUserMedia ||
@@ -49,8 +50,8 @@ export class MicrophoneRecorderMp3 {
             stream = str
             mediaOptions['constraints'] = constraints
             mediaRecorder = new Recorder({
-              wasmURL: wasmURL,
-              shimURL:shimURL,
+              wasmURL: './lib/vmsg.wasm',
+              shimURL:'./lib/wasm-polyfill.js',
               ...mediaOptions,
             })
             console.log("mediaRecorder",mediaRecorder)
