@@ -16,6 +16,26 @@ export const voiceNotesList = [{
     id:4,
     url:'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
     note:"test notes 1"
+},
+{
+    id:4,
+    url:'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
+    note:"test notes 1"
+},
+{
+    id:4,
+    url:'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
+    note:"test notes 1"
+},
+{
+    id:4,
+    url:'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
+    note:"test notes 1"
+},
+{
+    id:4,
+    url:'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
+    note:"test notes 1"
 }]
 
 const VoiceNotesList = () => {
