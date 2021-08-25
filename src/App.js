@@ -5,7 +5,21 @@ import appRoutes from './app-routes';
 import './App.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import indexDBService from './services/local-storage';
+import { useState,useEffect } from 'react';
 function App() {
+  const [isDbInit,setDBInit] = useState(null)
+  useEffect(() => {     
+    function initDB(isSuccess) {
+      setDBInit(isSuccess)
+    }   
+    // initialize
+    indexDBService.open(initDB)
+    return () => {
+      // clear all
+    }
+   },[])
+
   return (
     <div className="voice_main_wrapper">
       <Suspense fallback={<div />}>
@@ -19,7 +33,9 @@ function App() {
                   path={r.path}
                   component={props => {
                     return (
-                      <r.component  {...props} 
+                      <r.component  
+                      {...props} 
+                      isDbInit={isDbInit}
                       />
                     )
                   }}
