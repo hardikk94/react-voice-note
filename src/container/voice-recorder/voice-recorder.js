@@ -38,7 +38,8 @@ const VoiceRecorder = () => {
 
     const stopRecording = async () => {
         recordingStarted(false)
-        let audioObj = await audioService.stopRecording();         
+        let audioObj = await audioService.stopRecording();  
+        console.log("audioObj",audioObj)       
         setAudioObj(audioObj)      
     }
 
@@ -55,7 +56,7 @@ const VoiceRecorder = () => {
             <div className="voice_form">
                 <div className="voice_form_title">
                     <div className="first_part">Speak up your ideas</div>
-                    <div className="second_part">Add your voice note and share to your friends{audioService.getTimerCount()}</div>
+                    <div className="second_part">Add your voice note and share to your friends</div>
                 </div>
                 <input type="text" placeholder="Your voice note name here..." name="voiceNote" id="voiceNote" className="txt_input" onChange={changeTextInput} />
                 <div className="btn_row_recorder">

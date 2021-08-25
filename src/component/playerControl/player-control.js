@@ -20,6 +20,7 @@ const PlayerView = props => {
           src={notes.url}
           autoPlay
           controls
+          controlsList="nodownload"
         />      
     </div>
   )

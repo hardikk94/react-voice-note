@@ -3,12 +3,13 @@
 .row__userlist {
   align-items: center;
   display: flex;
-  height: 400px;
+  max-height: 400px;
+  background: $dark-black-14;
+  padding: 20px;
 }
 .row.separator-menuhome {
   background-color: rgba($color: $white-color, $alpha: 0.2);
-  height: 1px;
-  margin: 3px 0;
+  height: 1px;  
 }
 
 .userdetail__col__left {
@@ -79,7 +80,7 @@
 .userlist__main__row {
   display: flex;
   flex-direction: column;
-  height: 150px;  
+  max-height: 400px;  
   justify-content: center;
   cursor: pointer;  
 }
@@ -101,23 +102,24 @@
 }
 
 .player-control-view {
-  height: 135px;
+  height: 100px;
+  background: $dark-black-14;
 }
 @keyframes bounce-player-down-side {
   0% {
-    max-height: 0px;
+    max-height: 0px;    
   }
-  100% {
-    max-height: 135px;
+  100% {    
+    max-height: 100px;
   }
 }
 
 @keyframes bounce-player-up-side {
   0% {
-    max-height: 135px;
+    max-height:100px;    
   }
   100% {
-    max-height: 0px;
+    max-height: 0px;    
   }
 }
 
@@ -128,10 +130,4 @@
   100% {
     opacity: 1;
   }
-}
-
-.fade-in {
-  animation-name: fadeunread;
-  animation-timing-function: ease;
-  animation-duration: 9000ms;
 }

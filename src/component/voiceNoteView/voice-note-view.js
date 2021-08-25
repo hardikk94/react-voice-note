@@ -5,12 +5,12 @@ import PlayerView from '../playerControl/player-control';
 import './voice-note-view.scss'
 const VoiceNoteView = (props) => {
     const [isPlaying, setIsPlaying] = useState(null)
-    const togglePlayerHandler = () => {  
-        if(isPlaying && isPlaying?.id) {
+    const togglePlayerHandler = () => {
+        if (isPlaying && isPlaying?.id) {
             setIsPlaying(null)
         } else {
             setIsPlaying(props.notes)
-        }        
+        }
     }
 
     return (
@@ -34,21 +34,21 @@ const VoiceNoteView = (props) => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="row row--lg separator-menuhome"></div>            
-            <div className="player-container">               
-                <CSSTransition
-                    in={isPlaying && isPlaying.id == props.notes.id}
-                    timeout={450}
-                    classNames="player-transition"
-                    unmountOnExit
-                >
-                    <div className="player-control-view">
-                        <PlayerView
-                            notes={props.notes}
-                        />
-                    </div>
-                </CSSTransition>
+                <div className="row row--lg separator-menuhome"></div>
+                <div className="player-container">
+                    <CSSTransition
+                        in={isPlaying && isPlaying.id == props.notes.id}
+                        timeout={450}
+                        classNames="player-transition"
+                        unmountOnExit
+                    >
+                        <div className="player-control-view">
+                            <PlayerView
+                                notes={props.notes}
+                            />
+                        </div>
+                    </CSSTransition>
+                </div>
             </div>
         </Fragment>
     )
