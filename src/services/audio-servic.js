@@ -39,8 +39,7 @@ export class AudioDetail {
         console.log('<=== stop recording ===> ')
         let data = await this.mp3MicRecorder.stopRecording()
         this.clearAudioRecorderInterval()        
-        toastService.showToast("Recording Stopped", toastType.info)
-        this.onStopHandler(data)
+        toastService.showToast("Recording Stopped", toastType.info)        
         return data
     }
 
@@ -50,22 +49,7 @@ export class AudioDetail {
             this.intervalCallback = null
         }
     }
-
-
-    onStopHandler = async (recordedBlob) => {
-        if (this.timerCount > 1) {
-            var audio = new FormData()
-            audio.append('file', recordedBlob.blob)
-            audio.append('type', 'AUDIO')
-            audio.append(
-                'duration',
-                this.timerCount > this.AudioRecordingLimit
-                    ? this.AudioRecordingLimit
-                    : this.timerCount
-            )
-        }
-    }
-
+   
     getTimerCount = () => {
         return this.timerCount;
     }
