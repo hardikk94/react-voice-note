@@ -2,6 +2,11 @@
 # Voice Notes Tool
 This app is a simple audio recorder tool.It's useful for saving a voice notes for your ongoing thoughts as well as add todos and your daily routines. We mostly used text note and other app for our todos but it's quick and very easy to use in daily routines.
 
+# Host
+
+I have hosted this app on netlify server. Here is the URL
+https://voicenote.netlify.app/
+
 # Technologies
 
 ReactJS, Redux, vmsg, WebRTC, IndexDB
