@@ -53,6 +53,20 @@ export class AudioDetail {
     getTimerCount = () => {
         return this.timerCount;
     }
+
+    checkAudioPermission = () => {        
+        return new Promise((resolve) => {
+            var constraints = { audio: true, video:false };
+            navigator.mediaDevices.getUserMedia(constraints)
+            .then(str => {
+                if(str && str.id) {
+                    resolve(true)
+                } else {
+                    resolve(false)
+                }                
+            }).catch((ex) => resolve(false));
+        })        
+    }
 }
 
 export default  new AudioDetail();
