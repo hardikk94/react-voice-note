@@ -19,19 +19,25 @@ const toastNotification = {
   showToast: (
     message,
     type = toastType.info,
-    position = positionType.topRight
+    position = positionType.topRight,
   ) => {
     switch (type) {
       case toastType.success: {
         toast.success(message, {
           position: position,
           className: 'toast-custom-class',
+          hideProgressBar: true,
+          autoClose:2000,
+          background: '#ffc107',
         })
         break
       }
       case toastType.error: {
         toast.error(message, {
           position: position,
+          hideProgressBar: true,
+          autoClose:2000,
+          theme:'dark'
           // className: 'toast-custom-class'
         })
         break
@@ -39,14 +45,22 @@ const toastNotification = {
       case toastType.warn: {
         toast.warn(message, {
           position: position,
+          hideProgressBar: true,
           className: 'toast-custom-class',
+          autoClose:2000,
+          theme:'dark',
+          background: '#ffc107',
         })
         break
       }
       case toastType.info: {
         toast.info(message, {
           position: position,
+          hideProgressBar: true,
           className: 'toast-custom-class',
+          autoClose:2000,
+          theme:'dark',
+          background: '#ffc107',
         })
         break
       }
@@ -54,6 +68,10 @@ const toastNotification = {
         toast.success(message, {
           position: position,
           className: 'toast-custom-class',
+          hideProgressBar: true,
+          autoClose:2000,
+          theme:'dark',
+          background: '#ffc107',
         })
         break
       }
