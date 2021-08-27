@@ -6,7 +6,7 @@ import PlayerView from '../../component/playerControl/player-control';
 import toastService, { toastType } from '../../services/toast.service';
 import { useSelector,useDispatch } from 'react-redux';
 import { voiceNoteAdd } from '../../actions/voice-note-action';
-const  limit = 15;
+const  limit = 30;
 const VoiceRecorder = () => {
     const [isRecordingStarted, recordingStarted] = useState(false)
     const [count,setCount] = useState(0)
