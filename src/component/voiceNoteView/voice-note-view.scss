@@ -28,6 +28,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  .delete_icon {
+    margin-left: 20px;
+    margin-top: -5px;
+  }
 }
 
 .userprofile__col {

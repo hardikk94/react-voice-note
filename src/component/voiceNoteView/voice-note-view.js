@@ -1,16 +1,23 @@
 import React, { Fragment, useState } from 'react'
 import PlayIcon from '../../assets/images/filed-play-icon-purple.svg';
+import DeleteButton from '../../assets/images/delete.png'
 import { CSSTransition } from 'react-transition-group'
 import PlayerView from '../playerControl/player-control';
 import './voice-note-view.scss'
 const VoiceNoteView = (props) => {
     const [isPlaying, setIsPlaying] = useState(null)
     const togglePlayerHandler = () => {
+        console.log("player toggle")
         if (isPlaying && isPlaying?.id) {
             setIsPlaying(null)
         } else {
             setIsPlaying(props.notes)
         }
+    }
+
+    const deleteVoiceNotes = (event) => {
+        event.stopPropagation()
+        console.log("delete note")
     }
 
     return (
@@ -27,11 +34,17 @@ const VoiceNoteView = (props) => {
                             <div className="username">{props.notes.note}</div>
                         </div>
                         <div className="play__btn__col__right">
-                            <img
+                            <img className="play_icon"
                                 src={PlayIcon}
                                 alt="menubarPlayPurpleIcon"
                             />
+                            <img className="delete_icon"
+                                src={DeleteButton}
+                                onClick={deleteVoiceNotes}
+                                alt="menubarPlayPurpleIcon"
+                            />
                         </div>
+                        
                     </div>
                 </div>
                 <div className="row row--lg separator-menuhome"></div>
