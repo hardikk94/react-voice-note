@@ -6,9 +6,9 @@ import { voiceNoteListRequest } from '../../actions/voice-note-action'
 
 const VoiceNotesList = () => {
     const dispatch = useDispatch();
-    const list = useSelector((state) => state.VoiceNotes.voiceNoteList)
+    const list = useSelector((state) => state.voiceNotes.voiceNoteList)
     useEffect(() => {
-        voiceNoteListRequest(null,dispatch)
+        voiceNoteListRequest(dispatch)
     },[])
     return (
         <div className="voice_list_wrapper">

@@ -6,34 +6,14 @@ const initialState = {
     error:null,    
 };
 
- const voiceNotesList = [{
-    id:1,
-    url:'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
-    note:"test notes 1"
-},{
-    id:2,
-    url:'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
-    note:"test notes 1"
-},{
-    id:3,
-    url:'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
-    note:"test notes 1"
-},{
-    id:4,
-    url:'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
-    note:"test notes 1"
-}]
-
 const VoiceNotes = (state = initialState,action) => {
     switch(action.type) {
         // voice list
-        case type.VOICE_LIST_REQUESTED: {
-            console.log("comes hetre...")
+        case type.VOICE_LIST_REQUESTED: {            
             return {
                 ...state,     
                 success:false,           
-                isLoading: true, 
-                voiceNoteList: [...voiceNotesList]                             
+                isLoading: true,                                         
             };
         }
         case type.VOICE_LIST_COMPLETED: {

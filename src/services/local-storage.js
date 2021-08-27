@@ -69,7 +69,9 @@ var voiceNoteDB = (function () {
                 vnNotes.push(result.value);
                 result.continue();
             };
-            cursorRequest.onerror = vnDB.onerror;
+            cursorRequest.onerror = function (e) {
+                callback([]);
+            }
         } catch (error) {
 
         }
@@ -84,18 +86,20 @@ var voiceNoteDB = (function () {
             let timestamp = new Date().getTime();
             let vnNote = {
                 'note': text,
-                'file': file,
-                'timestamp': timestamp
+                'file': file,      
+                'timestamp':timestamp,
+                'id':`note_${timestamp}`
             };
             let request = objStore.put(vnNote);
             request.onsuccess = function (e) {
-                callback(vnNote);
+                callback(true);
             };
-            request.onerror = vnDB.onerror;
+            request.onerror = function (e) {
+                callback(false);
+            };
         } catch (error) {
             // error
         }
-
     };
 
     // delete notes

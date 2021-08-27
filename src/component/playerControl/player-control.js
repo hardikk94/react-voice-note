@@ -6,7 +6,7 @@ import ReactAudioPlayer from 'react-audio-player'
 const PlayerView = props => {
   const audioPlayer = useRef(null)  
   const {notes} = props
-
+  console.log("notes",notes)
   const errorPlayer = () => {
       alert("Playback error!!")
   }
@@ -17,7 +17,7 @@ const PlayerView = props => {
           onError={errorPlayer}
           ref={audioPlayer}
           id="audioplayer"          
-          src={notes.url}
+          src={notes.file.blobURL}
           autoPlay
           controls
           controlsList="nodownload"

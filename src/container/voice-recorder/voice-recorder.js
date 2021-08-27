@@ -4,6 +4,8 @@ import audioService from '../../services/audio-servic';
 import { useState,useEffect } from 'react';
 import PlayerView from '../../component/playerControl/player-control';
 import toastService, { toastType } from '../../services/toast.service';
+import { useSelector,useDispatch } from 'react-redux';
+import { voiceNoteAdd } from '../../actions/voice-note-action'
 const  limit = 30;
 const VoiceRecorder = () => {
     const [isRecordingStarted, recordingStarted] = useState(false)
@@ -11,6 +13,8 @@ const VoiceRecorder = () => {
     const [timerCallback,setTimerCallback] = useState(null)
     const [audioObj,setAudioObj] = useState(null)
     const [textInput,setTextInput] = useState(null)
+    const dispatch = useDispatch();
+    const isLoading = useSelector((state) => state.voiceNotes.isLoading)
     useEffect(() => {
         if(isRecordingStarted) {           
             const interval = setInterval(async () => {
@@ -44,7 +48,11 @@ const VoiceRecorder = () => {
     }
 
     const submitRecording = () => {
-        toastService.showToast("Submitted voice note successfully", toastType.info)
+        let payload = {
+            note:textInput,
+            file:audioObj,
+        }
+        voiceNoteAdd(payload,dispatch)        
     }
 
     const changeTextInput = (event) => {        
@@ -62,7 +70,7 @@ const VoiceRecorder = () => {
                 <div className="btn_row_recorder">
                     <button type="button" className="btn btn_record" name="btn_record" id="btn_record" onClick={isRecordingStarted ? stopRecording : startRecording}>
                         <img className="img_recording" src={microphoneIcon} draggable="false" />{isRecordingStarted ? 'Stop Recording' : 'Start Recording'}</button>
-                    <button type="submit" disabled={!textInput || !audioObj} className="btn btn_submit" name="btn_submit" id="btn_submit" onClick={submitRecording}>Submit Note</button>
+                    <button type="button" disabled={!textInput || !audioObj} className="btn btn_submit" name="btn_submit" id="btn_submit" onClick={submitRecording}>{isLoading ? 'Submitting...' : 'Submit Note' }</button>
                 </div>
                 <div className="count_wrapper">
                     {count ? <span className="counter">00:{count > 9 ? count : `0${count}`}</span> : null}                    
