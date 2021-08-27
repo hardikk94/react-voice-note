@@ -1,6 +1,37 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Voice Notes Tool
+This app is a simple audio recorder tool.It is useful for saving a voice notes for your ongoing thoughts as well as add todo and your daily routines. We mostly used text note and other app for our todos but it's quick and very easy to use in daily routines.
+
+# Technologies
+
+ReactJS, Redux, vmsg, WebRTC, IndexDB
+
+# Purpose
+
+Mainly while recording a audio using browser or chrome it gives us audio/webm so in out project we have used web assembly 
+to convert webm to mp3 so that will support in all devices.
+
+
+# What I did
+Create react app with using create-react-app.\
+Used redux for state management (Action, Reducer, store , Constant, selectors).\
+Used react-redux for subscribing store and dispatching actions.\
+Used react js latest hooks.\
+Handle lazy load module and components.\
+Used SCSS structure - Created global color variables and used in the app also created a global style sheet for common css.\
+Create audio recorder service for recording auido and used wasm file to convert that audio into MP3 Format.\
+Created MP3 Recorder service with the reference of vmsg, module and created service for it.\
+Created Toaster service for showing toaster globally also done some customization in that.\
+Created IndexDB local storage service for perform CRUD operation.\
+Used CSS Transition for animation in voicelist player.\
+Used react-audio player  (https://www.npmjs.com/package/react-audio-player) for playing  audio.\
+Created Two module player and voice list.\
+
+
+
+# Sources
+For audio mp3 conversion https://github.com/Kagami/vmsg
+For React Concept - https://reactjs.org/
 
 ## Available Scripts
 
@@ -39,40 +70,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
 ### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-https://github.com/Kagami/vmsg
-
-
 
 Preview app
 
