@@ -60,7 +60,7 @@ const VoiceNotes = (state = initialState,action) => {
             return {
                 ...state,    
                 success:false,                       
-                isLoading: true,  
+                isLoading: action.payload,  
                 from:'delete'                                 
             };
         }

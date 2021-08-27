@@ -30,7 +30,7 @@ export const voiceNoteAdd = (data, dispatch) => {
 }
 
 export const voiceNoteDelete = (data, dispatch) => {
-    dispatch({type: type.VOICE_DELETE_REQUESTED})
+    dispatch({type: type.VOICE_DELETE_REQUESTED,payload:data})
     const successCallback = (isDeleted) => {
         setTimeout(() => {
             if (isDeleted) {

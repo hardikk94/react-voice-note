@@ -3,20 +3,22 @@ import PlayIcon from '../../assets/images/filed-play-icon-purple.svg';
 import DeleteButton from '../../assets/images/delete.png'
 import { CSSTransition } from 'react-transition-group'
 import PlayerView from '../playerControl/player-control';
-import { voiceNoteDelete,voiceNoteListRequest } from '../../actions/voice-note-action';
+import { voiceNoteDelete } from '../../actions/voice-note-action';
+import { playerToggle } from '../../actions/player-action'
 import ClipLoader from "react-spinners/ClipLoader";
 import './voice-note-view.scss'
 import { useDispatch, useSelector } from 'react-redux';
 const VoiceNoteView = (props) => {
-    const dispatch = useDispatch()
-    const [isPlaying, setIsPlaying] = useState(null)
-    const isDeleteLoading = useSelector((state) => state.voiceNotes.isLoading && state.voiceNotes.from == 'delete')
+    const dispatch = useDispatch()    
+    const isPlaying = useSelector((state) => state.player.isPlaying);
+    const isDeleteLoading = useSelector((state) => state.voiceNotes.isLoading && 
+    state.voiceNotes.from == 'delete' && state.voiceNotes.isLoading?.id == props.notes.id)
 
     const togglePlayerHandler = () => {
-        if (isPlaying && isPlaying?.id) {
-            setIsPlaying(null)
+        if (isPlaying && isPlaying?.id && isPlaying?.id == props.notes.id) {
+            playerToggle(null,dispatch)
         } else {
-            setIsPlaying(props.notes)
+            playerToggle(props.notes,dispatch)
         }
     }
 
