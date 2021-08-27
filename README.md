@@ -25,7 +25,7 @@ Created IndexDB local storage service for perform CRUD operation.\
 Used CSS Transition for animation in voicelist player.\
 Used react-audio player  (https://www.npmjs.com/package/react-audio-player) for playing  audio.\
 Created Two module player and voice list.\
-
+Convert blob to array buffer and store in index db and when going to playe again conver in blob url and play the audio
 
 
 # Sources
