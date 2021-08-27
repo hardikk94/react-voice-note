@@ -1,6 +1,6 @@
 
 # Voice Notes Tool
-This app is a simple audio recorder tool.It is useful for saving a voice notes for your ongoing thoughts as well as add todo and your daily routines. We mostly used text note and other app for our todos but it's quick and very easy to use in daily routines.
+This app is a simple audio recorder tool.It's useful for saving a voice notes for your ongoing thoughts as well as add todos and your daily routines. We mostly used text note and other app for our todos but it's quick and very easy to use in daily routines.
 
 # Technologies
 
@@ -8,15 +8,14 @@ ReactJS, Redux, vmsg, WebRTC, IndexDB
 
 # Purpose
 
-Mainly while recording a audio using browser or chrome it gives us audio/webm so in out project we have used web assembly 
-to convert webm to mp3 so that will support in all devices.
+Mainly while recording a audio using browser or chrome it gives us audio/webm format and that only play in web not in mobile devices so in our project we have used web assembly file to convert webm to mp3 so that it will support in all devices.
 
 
 # What I did
-Create react app with using create-react-app.\
+Created react app with using create-react-app.\
 Used redux for state management (Action, Reducer, store , Constant, selectors).\
 Used react-redux for subscribing store and dispatching actions.\
-Used react js latest hooks.\
+Used reactJS latest hooks.\
 Handle lazy load module and components.\
 Used SCSS structure - Created global color variables and used in the app also created a global style sheet for common css.\
 Create audio recorder service for recording auido and used wasm file to convert that audio into MP3 Format.\
