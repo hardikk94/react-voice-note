@@ -43,7 +43,8 @@ const VoiceRecorder = () => {
     const stopRecording = async () => {
         recordingStarted(false)
         let audioObj = await audioService.stopRecording();  
-        console.log("audioObj",audioObj)       
+        console.log("audioObj",audioObj)   
+        audioObj.file = audioObj    
         setAudioObj(audioObj)      
     }
 

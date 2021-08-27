@@ -76,5 +76,6 @@ https://github.com/Kagami/vmsg
 
 Preview app
 
-![Listing](voice-notes.png)
 ![Recorder](recorder.png)
+
+![Listing](voice-notes.png)
