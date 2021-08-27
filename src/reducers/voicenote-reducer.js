@@ -6,14 +6,34 @@ const initialState = {
     error:null,    
 };
 
-const VoiceNoteList = (state = initialState,action) => {
+ const voiceNotesList = [{
+    id:1,
+    url:'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
+    note:"test notes 1"
+},{
+    id:2,
+    url:'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
+    note:"test notes 1"
+},{
+    id:3,
+    url:'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
+    note:"test notes 1"
+},{
+    id:4,
+    url:'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
+    note:"test notes 1"
+}]
+
+const VoiceNotes = (state = initialState,action) => {
     switch(action.type) {
         // voice list
         case type.VOICE_LIST_REQUESTED: {
+            console.log("comes hetre...")
             return {
                 ...state,     
                 success:false,           
-                isLoading: true,                                
+                isLoading: true, 
+                voiceNoteList: [...voiceNotesList]                             
             };
         }
         case type.VOICE_LIST_COMPLETED: {
@@ -21,7 +41,7 @@ const VoiceNoteList = (state = initialState,action) => {
                 ...state,     
                 success:true,           
                 isLoading: false,   
-                voiceList:action.payload.voiceNoteList                             
+                voiceNoteList:action.payload.voiceNoteList                             
             };
         }
 
@@ -70,4 +90,4 @@ const VoiceNoteList = (state = initialState,action) => {
     }
 }
 
-export default VoiceNoteList
+export default VoiceNotes

@@ -1,29 +1,19 @@
+import {useSelector,useDispatch} from 'react-redux';
+import { useEffect } from 'react';
 import './voice-note-list.scss';
 import VoiceNoteView from './../../component/voiceNoteView/voice-note-view';
-export const voiceNotesList = [{
-    id:1,
-    url:'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
-    note:"test notes 1"
-},{
-    id:2,
-    url:'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
-    note:"test notes 1"
-},{
-    id:3,
-    url:'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
-    note:"test notes 1"
-},{
-    id:4,
-    url:'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
-    note:"test notes 1"
-},
-]
+import { voiceNoteListRequest } from '../../actions/voice-note-action'
 
 const VoiceNotesList = () => {
+    const dispatch = useDispatch();
+    const list = useSelector((state) => state.VoiceNotes.voiceNoteList)
+    useEffect(() => {
+        voiceNoteListRequest(null,dispatch)
+    },[])
     return (
         <div className="voice_list_wrapper">
             {
-                voiceNotesList.map((notes) => {
+                list.map((notes) => {
                     return (
                         <VoiceNoteView                        
                             notes={notes}

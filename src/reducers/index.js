@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
-import voiceNotes from './voicenote-reducer';
+import VoiceNotes from './voicenote-reducer';
 import player from './player-reducer';
 
 
-const reducer = combineReducers({
-    voiceNotes,
+const voiceNoteReducer = combineReducers({
+    VoiceNotes,
     player,
 });
 
-export default reducer;
+export default voiceNoteReducer;
