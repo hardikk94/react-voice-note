@@ -6,7 +6,7 @@ import PlayerView from '../../component/playerControl/player-control';
 import toastService, { toastType } from '../../services/toast.service';
 import { useSelector,useDispatch } from 'react-redux';
 import { voiceNoteAdd } from '../../actions/voice-note-action';
-const  limit = 30;
+const  limit = 15;
 const VoiceRecorder = () => {
     const [isRecordingStarted, recordingStarted] = useState(false)
     const [count,setCount] = useState(0)
@@ -18,10 +18,7 @@ const VoiceRecorder = () => {
     useEffect(() => {
         if(isRecordingStarted) {           
             const interval = setInterval(async () => {
-                setCount(count => count + 1);
-                if(count > limit) {
-                    startRecording()
-                }
+                setCount(count => count + 1);              
             }, 1000);
             setTimerCallback(interval)
         } else {
@@ -35,6 +32,13 @@ const VoiceRecorder = () => {
       }, [isRecordingStarted]);
 
 
+      useEffect(() => {          
+        if(count >= limit) {
+            stopRecording()
+            clearInterval(timerCallback);
+        }
+      },[count])
+
     const startRecording = () => {   
         audioService.checkAudioPermission().then((res) => {
             if(res) {
@@ -47,9 +51,10 @@ const VoiceRecorder = () => {
     const stopRecording = async () => {
         recordingStarted(false)
         let audioObj = await audioService.stopRecording();  
-        console.log("audioObj",audioObj)   
-        audioObj.file = audioObj    
-        setAudioObj(audioObj)      
+        if(audioObj) {
+            audioObj.file = audioObj    
+            setAudioObj(audioObj)      
+        }        
     }
 
     const submitRecording = () => {

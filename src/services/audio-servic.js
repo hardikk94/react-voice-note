@@ -1,53 +1,29 @@
 import { MicrophoneRecorderMp3 } from './mp3-mic';
 import audioURL from './../connected.wav';
 import toastService, { toastType } from '../services/toast.service';
-export class AudioDetail {
-    AudioRecordingLimit = 30;
-    mp3MicRecorder = null;
-    intervalCallback = null;
+export class AudioDetail {    
+    mp3MicRecorder = null;    
     constructor() {
         this.mp3MicRecorder = new MicrophoneRecorderMp3();
     }
 
-    startRecording = async () => {
-        console.log('<=== start recording ===> ')
+    startRecording = async () => {        
         this.mp3MicRecorder.startRecording();
         toastService.showToast("Recording Started", toastType.info)
-        this.setPlayerInterval()
+        this.recordSoundPlay()
     }
 
-    setPlayerInterval = async () => {
-        //console.log('<=== setPlayerInterval start here ===> ')
+    recordSoundPlay = async () => {        
         this.timerCount = 0       
-        if (this.intervalCallback === null) {
-            //console.log('<=== interval null here ===> ')            
-            const sound = new Audio(audioURL)
-            sound.play()
-            this.intervalCallback = setInterval(async () => {
-                console.log('<=== Timer is : ===> ', this.timerCount)
-                if (this.timerCount >= this.AudioRecordingLimit) {
-                    await this.stopRecording()                    
-                } else {
-                    this.timerCount++
-                }
-            }, 1000)
-        }
+        const sound = new Audio(audioURL)
+        sound.play() 
     }
 
 
-    stopRecording = async () => {
-        console.log('<=== stop recording ===> ')
-        let data = await this.mp3MicRecorder.stopRecording()
-        this.clearAudioRecorderInterval()        
+    stopRecording = async () => {        
+        let data = await this.mp3MicRecorder.stopRecording()                
         toastService.showToast("Recording Stopped", toastType.info)        
         return data
-    }
-
-    clearAudioRecorderInterval = () => {      
-        if (this.intervalCallback) {
-            clearInterval(this.intervalCallback)
-            this.intervalCallback = null
-        }
     }
    
     getTimerCount = () => {
