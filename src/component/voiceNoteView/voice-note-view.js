@@ -65,7 +65,7 @@ const VoiceNoteView = (props) => {
                 <div className="row row--lg separator-menuhome"></div>
                 <div className="player-container">
                     <CSSTransition
-                        in={isPlaying && isPlaying.id == props.notes.id}
+                        in={isPlaying && isPlaying?.id == props.notes.id}
                         timeout={450}
                         classNames="player-transition"
                         unmountOnExit

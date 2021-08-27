@@ -78,7 +78,7 @@ var voiceNoteDB = (function () {
     };
 
     // create notes
-    vnDB.createVoiceNotes = function (text, file, callback) {
+    vnDB.createVoiceNotes = function (text, file,buffer, callback) {
         try {
             let db = datastore;
             let transaction = db.transaction(['voicenote'], 'readwrite');
@@ -88,7 +88,8 @@ var voiceNoteDB = (function () {
                 'note': text,
                 'file': file,      
                 'timestamp':timestamp,
-                'id':`note_${timestamp}`
+                'id':`note_${timestamp}`,
+                'buffer':buffer
             };
             let request = objStore.put(vnNote);
             request.onsuccess = function (e) {

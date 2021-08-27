@@ -3,7 +3,6 @@ import microphoneIcon from '../../assets/images/ico_voice_record_active.svg';
 import audioService from '../../services/audio-servic';
 import { useState,useEffect } from 'react';
 import PlayerView from '../../component/playerControl/player-control';
-import toastService, { toastType } from '../../services/toast.service';
 import { useSelector,useDispatch } from 'react-redux';
 import { voiceNoteAdd } from '../../actions/voice-note-action';
 const  limit = 30;
@@ -50,17 +49,19 @@ const VoiceRecorder = () => {
 
     const stopRecording = async () => {
         recordingStarted(false)
-        let audioObj = await audioService.stopRecording();  
-        if(audioObj) {
-            audioObj.file = audioObj    
-            setAudioObj(audioObj)      
+        let audioObj = await audioService.stopRecording();           
+        if(audioObj) {            
+            const audio = {
+                file:audioObj,                
+            }        
+            setAudioObj(audio)      
         }        
     }
 
     const submitRecording = () => {
         let payload = {
             note:textInput,
-            file:audioObj,
+            file:audioObj.file,
         }
         setAudioObj(null) 
         setTextInput('')
@@ -88,7 +89,7 @@ const VoiceRecorder = () => {
                     {count ? <span className="counter">00:{count > 9 ? count : `0${count}`}</span> : null}                    
                 </div>
                 <div className="recorded_view">
-                    {audioObj && audioObj?.blobURL ? <PlayerView notes={audioObj} /> : null}                        
+                    {audioObj ? <PlayerView notes={audioObj} /> : null}                        
                 </div>
             </div>
         </div>

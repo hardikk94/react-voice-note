@@ -35,12 +35,25 @@ Created Two module player and voice list.\
 Convert blob to array buffer and store in index db and when going to playe again conver in blob url and play the audio\
 Handled audio permission - Untill allow microphone, User can't record a audio
 Handled 30 sec audio recording
+Created Utils service for converting buffer to array and Array to Buffer
 
 # check the permission for mirophone
 
 While going to first time record audio, there is one popop comes for asking a persmission for the microphone so click on allow will able to record audio also you can check you permission in chrome -> setting -> site setting.
 
 ![Permission](permission.png)
+
+# Challenges
+
+### `Conversion of audio/webm format to audio/mp3`
+This thing is very challenges like one my project is based on voice messaging and that support many platforms like android /ios(Mobile),  MAC/Lnix/Windows(Desktop) so all device have their own limits and capabilities so in that I need to conevert webm file to mp3 because mp3 supports in all platforms.\
+
+### `Store audio voice messages to IndexDB`
+IndexDB has less capabilities also there is some limitation too.First I tried with stire a blob URL and play the url in player it works but after reloading the tab it just clear the blob which was stored temporary in memory so after that I google and find a solution like convert a blob to array buffer and store in index db and while playing convert to blobn from array buffer.
+
+### `Conversion of Arraybuffer to blob `
+While converting a list of array buffer to blob I facing the issue of asynchronization beacuse there are different size of buffer and all have different size so I used promise.all in map function to wait until all buffer convert into blob.
+
 
 
 
