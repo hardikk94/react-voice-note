@@ -21,7 +21,7 @@ export const voiceNoteAdd = (data, dispatch) => {
                 toastService.showToast("Voice note Added Successfully !!", toastType.info)
                 dispatch({ type: type.VOICE_ADD_COMPLETED })
             } else {
-                toastService.showToast("Voice note Added Successfully !!", toastType.info)
+                toastService.showToast("There some error in DB. Please Try Again !!", toastType.error)
                 dispatch({ type: type.VOICE_LIST_ERROR, payload: { error: "There some error in DB" } })
             }
         }, 2000)
@@ -30,10 +30,17 @@ export const voiceNoteAdd = (data, dispatch) => {
 }
 
 export const voiceNoteDelete = (data, dispatch) => {
-    dispatch({
-        type: type.VOICE_DELETE_REQUESTED,
-        payload: {
-            ...data
-        }
-    })
+    dispatch({type: type.VOICE_DELETE_REQUESTED})
+    const successCallback = (isDeleted) => {
+        setTimeout(() => {
+            if (isDeleted) {
+                toastService.showToast("Voice note Deleted Successfully !!", toastType.info)
+                dispatch({ type: type.VOICE_DELETE_COMPLETED,payload: data})
+            } else {
+                toastService.showToast("There some error in DB. Please Try Again !!", toastType.error)
+                dispatch({ type: type.VOICE_LIST_ERROR, payload: { error: "There some error in DB" } })
+            }
+        }, 2000)
+    }
+    indexDBService.deleteVoiceNotes(data.timestamp,successCallback)
 }

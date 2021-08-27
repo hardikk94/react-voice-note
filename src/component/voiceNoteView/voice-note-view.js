@@ -3,11 +3,16 @@ import PlayIcon from '../../assets/images/filed-play-icon-purple.svg';
 import DeleteButton from '../../assets/images/delete.png'
 import { CSSTransition } from 'react-transition-group'
 import PlayerView from '../playerControl/player-control';
+import { voiceNoteDelete,voiceNoteListRequest } from '../../actions/voice-note-action';
+import ClipLoader from "react-spinners/ClipLoader";
 import './voice-note-view.scss'
+import { useDispatch, useSelector } from 'react-redux';
 const VoiceNoteView = (props) => {
+    const dispatch = useDispatch()
     const [isPlaying, setIsPlaying] = useState(null)
+    const isDeleteLoading = useSelector((state) => state.voiceNotes.isLoading && state.voiceNotes.from == 'delete')
+
     const togglePlayerHandler = () => {
-        console.log("player toggle")
         if (isPlaying && isPlaying?.id) {
             setIsPlaying(null)
         } else {
@@ -17,7 +22,7 @@ const VoiceNoteView = (props) => {
 
     const deleteVoiceNotes = (event) => {
         event.stopPropagation()
-        console.log("delete note")
+        voiceNoteDelete(props.notes, dispatch)        
     }
 
     return (
@@ -38,13 +43,21 @@ const VoiceNoteView = (props) => {
                                 src={PlayIcon}
                                 alt="menubarPlayPurpleIcon"
                             />
-                            <img className="delete_icon"
-                                src={DeleteButton}
-                                onClick={deleteVoiceNotes}
-                                alt="menubarPlayPurpleIcon"
-                            />
+                            {isDeleteLoading ?
+                                (
+                                    <ClipLoader color={'#ffc107'} loading={isDeleteLoading} size={15} />
+                                )
+                                : (
+                                    <img className="delete_icon"
+                                        src={DeleteButton}
+                                        onClick={deleteVoiceNotes}
+                                        alt="menubarPlayPurpleIcon"
+                                    />
+                                )
+                            }
+
                         </div>
-                        
+
                     </div>
                 </div>
                 <div className="row row--lg separator-menuhome"></div>

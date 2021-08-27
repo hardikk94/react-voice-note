@@ -9,7 +9,7 @@ const VoiceNotesList = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const list = useSelector((state) => state.voiceNotes.voiceNoteList)
-    const isLoading = useSelector((state) => state.voiceNotes.isLoading)
+    const isLoading = useSelector((state) => state.voiceNotes.isLoading && state.voiceNotes.from == 'list')
     useEffect(() => {
         voiceNoteListRequest(dispatch)
     }, [])

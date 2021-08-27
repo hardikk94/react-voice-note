@@ -17,7 +17,7 @@ const PlayerView = props => {
           onError={errorPlayer}
           ref={audioPlayer}
           id="audioplayer"          
-          src={notes.file.blobURL}
+          src={notes.blobURL}
           autoPlay
           controls
           controlsList="nodownload"

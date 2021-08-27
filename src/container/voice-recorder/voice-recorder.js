@@ -76,7 +76,7 @@ const VoiceRecorder = () => {
                     {count ? <span className="counter">00:{count > 9 ? count : `0${count}`}</span> : null}                    
                 </div>
                 <div className="recorded_view">
-                    {audioObj && audioObj?.blobURL ? <PlayerView notes={{url:audioObj?.blobURL}} /> : null}                        
+                    {audioObj && audioObj?.blobURL ? <PlayerView notes={audioObj} /> : null}                        
                 </div>
             </div>
         </div>

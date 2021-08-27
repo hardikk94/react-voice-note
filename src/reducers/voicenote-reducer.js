@@ -4,6 +4,7 @@ const initialState = {
     isLoading: false,    
     voiceNoteList: [],
     error:null,    
+    from:''
 };
 
 const VoiceNotes = (state = initialState,action) => {
@@ -13,7 +14,8 @@ const VoiceNotes = (state = initialState,action) => {
             return {
                 ...state,     
                 success:false,           
-                isLoading: true,                                         
+                isLoading: true,    
+                from:'list'                                     
             };
         }
         case type.VOICE_LIST_COMPLETED: {
@@ -21,7 +23,8 @@ const VoiceNotes = (state = initialState,action) => {
                 ...state,     
                 success:true,           
                 isLoading: false,   
-                voiceNoteList:action.payload.voiceNoteList                             
+                voiceNoteList:action.payload.voiceNoteList,
+                from:'list'                        
             };
         }
 
@@ -39,14 +42,16 @@ const VoiceNotes = (state = initialState,action) => {
             return {
                 ...state,    
                 success:false,                       
-                isLoading: true,                                
+                isLoading: true,   
+                from:'add'                             
             };
         }
         case type.VOICE_ADD_COMPLETED: {
             return {
                 ...state,   
                 success:true,                        
-                isLoading: false,                                            
+                isLoading: false,  
+                from:'add'                                             
             };
         }
 
@@ -55,14 +60,26 @@ const VoiceNotes = (state = initialState,action) => {
             return {
                 ...state,    
                 success:false,                       
-                isLoading: true,                                
+                isLoading: true,  
+                from:'delete'                                 
             };
         }
-        case type.VOICE_DELETE_COMPLETED: {
+        case type.VOICE_DELETE_COMPLETED: { 
+            let list = []                       
+            if(state?.voiceNoteList && state?.voiceNoteList.length > 0 && action.payload?.timestamp) {
+                let key = action.payload.timestamp;
+                list = [...state?.voiceNoteList];
+                let index = list.findIndex((item) => item.timestamp == key)
+                if(index != -1) {
+                    list.splice(index,1)
+                }
+            }
             return {
                 ...state,   
                 success:true,                        
-                isLoading: false,                                            
+                isLoading: false, 
+                from:'delete',
+                voiceNoteList:list && list.length > 0 ? list : [],                                           
             };
         }
         default:
