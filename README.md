@@ -2,6 +2,8 @@
 # Voice Notes Tool
 This app is a simple audio recorder tool.It's useful for saving a voice notes for your ongoing thoughts as well as add todos and your daily routines. We mostly used text note and other app for our todos but it's quick and very easy to use in daily routines.
 
+We are only allow to record 30 sec voice note so after 30 sec recording will be auto stopped.
+
 # Host
 
 I have hosted this app on netlify server. Here is the URL
@@ -30,7 +32,16 @@ Created IndexDB local storage service for perform CRUD operation.\
 Used CSS Transition for animation in voicelist player.\
 Used react-audio player  (https://www.npmjs.com/package/react-audio-player) for playing  audio.\
 Created Two module player and voice list.\
-Convert blob to array buffer and store in index db and when going to playe again conver in blob url and play the audio
+Convert blob to array buffer and store in index db and when going to playe again conver in blob url and play the audio\
+Handled audio permission - Untill allow microphone, User can't record a audio
+Handled 30 sec audio recording
+
+# check the permission for mirophone
+
+While going to first time record audio, there is one popop comes for asking a persmission for the microphone so click on allow will able to record audio also you can check you permission in chrome -> setting -> site setting.
+
+![Permission](permission.png)
+
 
 
 # Sources
