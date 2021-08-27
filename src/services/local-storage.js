@@ -103,7 +103,7 @@ var voiceNoteDB = (function () {
     };
 
     // delete notes
-    vnDB.deleteVoiceNotes = function (id, callback) {
+    vnDB.deleteVoiceNotes = function (id, callback) {        
         try {
             var db = datastore;
             var transaction = db.transaction(['voicenote'], 'readwrite');
@@ -112,12 +112,13 @@ var voiceNoteDB = (function () {
             var request = objStore.delete(id);
 
             request.onsuccess = function (e) {
-                callback();
+                callback(true);
             }
             request.onerror = function (e) {
-                console.log(e);
+                callback(false);
             }
         } catch (error) {
+            console.log("deleted",error)
             // error
         }
     };
